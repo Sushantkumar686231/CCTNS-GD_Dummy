@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './Navbar.css';
 
-const Navbar = ({ setShowForm }) => {
+const Navbar = ({ handleNavbarClick }) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const handleDropdownClick = () => {
@@ -9,11 +9,15 @@ const Navbar = ({ setShowForm }) => {
   };
 
   const handleAddClick = () => {
-    setShowForm(true); // Show form when "Add GD" is clicked
+    handleNavbarClick('add'); // Call handleNavbarClick with 'add'
+  };
+
+  const handleViewClick = () => {
+    handleNavbarClick('view'); // Call handleNavbarClick with 'view'
   };
 
   const handleHomeClick = () => {
-    setShowForm(false); // Hide form when "Home" is clicked
+    handleNavbarClick('home'); // Call handleNavbarClick to hide forms and views
   };
 
   return (
@@ -23,7 +27,7 @@ const Navbar = ({ setShowForm }) => {
         <li className="dropdown-parent" onClick={handleDropdownClick}>
           General Dairy
           <ul className={`dropdown ${isDropdownOpen ? 'open' : ''}`}>
-            <li>View GD</li>
+            <li onClick={handleViewClick}>View GD</li> {/* Show view when View GD is clicked */}
             <li onClick={handleAddClick}>Add GD</li> {/* Show form when Add GD is clicked */}
           </ul>
         </li>
