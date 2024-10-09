@@ -1,0 +1,29 @@
+/* ViewGeneralDairy.css */
+.view-container {
+    margin: 20px;
+    padding: 10px;
+  }
+  
+  .general-dairy-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .general-dairy-table th, .general-dairy-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .general-dairy-table th {
+    background-color: #f2f2f2;
+  }
+  
+  .general-dairy-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .general-dairy-table tr:hover {
+    background-color: #ddd;
+  }
+  
